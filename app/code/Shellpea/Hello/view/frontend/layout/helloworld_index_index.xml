@@ -2,4 +2,9 @@
   <head>
 	  <title>Новая страница ^(0-0)^</title>
   </head>
+  <body>
+     <referenceContainer name="content.top">
+        <block class="Magento\Framework\View\Element\Template" name="Shellpea_Hello_two_block" template="Shellpea_Hello::two_block.phtml" />
+     </referenceContainer>
+   </body>
 </page>
