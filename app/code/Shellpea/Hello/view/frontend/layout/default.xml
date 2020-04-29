@@ -1,7 +1,15 @@
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
    <body>
-     <referenceContainer name="content">
+     <referenceContainer name="content.top">
         <block class="Magento\Framework\View\Element\Template" name="Shellpea_Hello_new_block" template="Shellpea_Hello::new_block.phtml" />
+     </referenceContainer>
+
+     <referenceContainer name="content">
+	<block class="Magento\Framework\View\Element\Template" name="Shellpea_Hello_two_block" template="Shellpea_Hello::two_block.phtml" >
+           <arguments>
+              <argument name="css_class" xsi:type="string" >a1</argument>
+           </arguments>           
+	</block>
      </referenceContainer>
    </body>
 </page>

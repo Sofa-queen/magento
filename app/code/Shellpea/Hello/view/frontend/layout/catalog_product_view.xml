@@ -1,0 +1,12 @@
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+  <body>
+     <referenceContainer name="content.top">	  
+        <block class="Magento\Framework\View\Element\Template" name="Shellpea_Hello_new_block" template="Shellpea_Hello::two_block.phtml" >
+           <arguments>
+              <argument name="css_class" xsi:type="string" >a2</argument>
+           </arguments>
+        </block>	    
+     </referenceContainer>
+  </body>
+</page>
+		
