@@ -2,4 +2,8 @@
     <type name="Magento\ConfigurableProduct\Pricing\Price\ConfigurablePriceResolver">
 	    <plugin name="price_resolver" type="Shellpea\Hello\Plugin\Pricing\Price\ConfigurablePriceResolverUpdater" />
     </type>
+
+    <type name="Magento\Catalog\Api\Data\ProductInterface">
+            <plugin name="get_price" type="Shellpea\Hello\Plugin\ProductInterfaceUpdater" />
+    </type>
 </config>	
