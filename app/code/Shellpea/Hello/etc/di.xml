@@ -10,4 +10,8 @@
     <type name="Magento\Theme\Block\Html\Footer">
             <plugin name="footer" type="Shellpea\Hello\Plugin\Footer" />
     </type>
+
+    <type name="Magento\Theme\Block\Html\Breadcrumbs">
+            <plugin name="Breadcrumbs" type="Shellpea\Hello\Plugin\Breadcrumbs" />
+    </type>
 </config>	
