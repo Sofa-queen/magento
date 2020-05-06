@@ -6,4 +6,8 @@
     <type name="Magento\Catalog\Api\Data\ProductInterface">
             <plugin name="get_price" type="Shellpea\Hello\Plugin\ProductInterfaceUpdater" />
     </type>
+
+    <type name="Magento\Theme\Block\Html\Footer">
+            <plugin name="footer" type="Shellpea\Hello\Plugin\Footer" />
+    </type>
 </config>	
