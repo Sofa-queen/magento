@@ -241,7 +241,7 @@ return [
         'Magento_PaypalReCaptcha' => 1,
         'MSP_TwoFactorAuth' => 1,
         'Shellpea_Hello' => 1,
-        'Shellpea_Lucky' => 1,
+        'Shellpea_LoggerURL' => 1,
         'Shellpea_Two' => 1,
         'Temando_Shipping' => 1,
         'Vertex_Tax' => 1,
