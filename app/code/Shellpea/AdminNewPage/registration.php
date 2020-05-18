@@ -4,4 +4,3 @@
       'Shellpea_AdminNewPage',
       __DIR__
   );
-

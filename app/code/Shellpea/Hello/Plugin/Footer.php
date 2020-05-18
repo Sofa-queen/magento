@@ -5,7 +5,7 @@ class Footer
 {
     public function aroundGetCopyright($name)
     {
-	$name = "“Customized copyright!”";
+        $name = "“Customized copyright!”";
         return  $name ;
     }
 }

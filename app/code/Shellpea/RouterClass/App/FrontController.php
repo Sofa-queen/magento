@@ -6,7 +6,7 @@ use Magento\Framework\App\RouterListInterface;
 use Magento\Framework\App\ResponseInterface;
 use Magento\Framework\App\ObjectManager;
 use Magento\Framework\App\Request\ValidatorInterface as RequestValidator;
-use Magento\Framework\Message\ManagerInterface as MessageManager;   
+use Magento\Framework\Message\ManagerInterface as MessageManager;
 
 class FrontController extends \Magento\Framework\App\FrontController
 {
@@ -19,17 +19,16 @@ class FrontController extends \Magento\Framework\App\FrontController
         ResponseInterface $response,
         ?RequestValidator $requestValidator = null,
         ?MessageManager $messageManager = null,
-        ?LoggerInterface $logger = null)    
-    {
-        parent::__construct($routerList, $response,  $requestValidator, $messageManager, $logger);
+        ?LoggerInterface $logger = null
+    ) {
+        parent::__construct($routerList, $response, $requestValidator, $messageManager, $logger);
         $this->logger = $logger
         ?? ObjectManager::getInstance()->get(LoggerInterface::class);
     }
 
     public function dispatch(\Magento\Framework\App\RequestInterface $request)
     {
-        foreach ($this->_routerList as $router)
-        {
+        foreach ($this->_routerList as $router) {
             $this->logger->info(get_class($router));
         }
 

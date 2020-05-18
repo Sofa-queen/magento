@@ -8,19 +8,18 @@ namespace Shellpea\LoggerURL\Observer;
 
 use Magento\Framework\Event\ObserverInterface;
 
-
 class ControllerActionPredispatch implements ObserverInterface
 {
     protected $logger;
 
-    public function __construct(\Psr\Log\LoggerInterface $logger)    
+    public function __construct(\Psr\Log\LoggerInterface $logger)
     {
         $this->logger = $logger;
     }
     
     public function execute(\Magento\Framework\Event\Observer $observer)
-    {      
+    {
         $myEventData = $observer->getRequest()->getPathInfo();
-	$this->logger->info($myEventData);
-    }	    
+        $this->logger->info($myEventData);
+    }
 }
