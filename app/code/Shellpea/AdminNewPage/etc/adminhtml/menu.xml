@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Shellpea_AdminNewPage::greeting" title="Greeting" module="Shellpea_AdminNewPage" sortOrder="51" resource="Shellpea_AdminNewPage::greeting"/>
+        <add id="Shellpea_AdminNewPage::helloworld" title="Hello world" module="Shellpea_AdminNewPage" sortOrder="10" action="adminnewpage/helloWorld" resource="Shellpea_AdminNewPage::helloworld" parent="Shellpea_AdminNewPage::greeting"/>
+    </menu>
+</config>
