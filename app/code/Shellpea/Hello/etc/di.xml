@@ -1,4 +1,6 @@
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for='Magento\Catalog\Controller\Product\View' type='Shellpea\Hello\Controller\Product\MyView' />
+
     <type name="Magento\ConfigurableProduct\Pricing\Price\ConfigurablePriceResolver">
 	    <plugin name="price_resolver" type="Shellpea\Hello\Plugin\Pricing\Price\ConfigurablePriceResolverUpdater" />
     </type>
