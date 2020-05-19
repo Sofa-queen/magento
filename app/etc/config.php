@@ -247,6 +247,7 @@ return [
         'Shellpea_LoggerURL' => 1,
         'Shellpea_MyController' => 1,
         'Shellpea_RouterClass' => 1,
+        'Shellpea_Template' => 1,
         'Shellpea_Two' => 1,
         'Temando_Shipping' => 1,
         'Vertex_Tax' => 1,
