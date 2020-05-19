@@ -241,6 +241,7 @@ return [
         'Magento_PaypalReCaptcha' => 1,
         'MSP_TwoFactorAuth' => 1,
         'Shellpea_AdminNewPage' => 1,
+        'Shellpea_Block' => 1,
         'Shellpea_HTML' => 1,
         'Shellpea_Hello' => 1,
         'Shellpea_LoggerURL' => 1,
