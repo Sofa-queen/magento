@@ -16,8 +16,10 @@ class Display extends \Magento\Framework\App\Action\Action
     public function execute()
     {
         $resultPage = $this->_resultPageFactory->create();
+        //$html = $resultPage->getLayout() ->createBlock('Shellpea\Block\Block\Display') ->toHtml();
         $html = $resultPage->getLayout()
-                ->createBlock('Shellpea\Block\Block\Display')
+                ->createBlock('Magento\Framework\View\Element\Text')
+                ->setText('_/\o-o/\_ Frog')
                 ->toHtml();
         $this->getResponse()->setBody($html);
     }
