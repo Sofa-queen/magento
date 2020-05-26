@@ -240,6 +240,7 @@ return [
         'Klarna_Kp' => 1,
         'Magento_PaypalReCaptcha' => 1,
         'MSP_TwoFactorAuth' => 1,
+        'Shellpea_ActionName' => 1,
         'Shellpea_AdminNewPage' => 1,
         'Shellpea_Attributes' => 1,
         'Shellpea_Block' => 1,
