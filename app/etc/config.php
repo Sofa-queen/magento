@@ -246,6 +246,7 @@ return [
         'Shellpea_Block' => 1,
         'Shellpea_HTML' => 1,
         'Shellpea_Hello' => 0,
+        'Shellpea_HelloCart' => 1,
         'Shellpea_LoggerURL' => 1,
         'Shellpea_MyController' => 1,
         'Shellpea_RouterClass' => 1,
