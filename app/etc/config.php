@@ -249,6 +249,7 @@ return [
         'Shellpea_HelloCart' => 0,
         'Shellpea_LoggerURL' => 0,
         'Shellpea_MyController' => 0,
+        'Shellpea_MyTable' => 1,
         'Shellpea_RouterClass' => 0,
         'Shellpea_SaveProduct' => 1,
         'Shellpea_Stores' => 0,
