@@ -1,6 +1,6 @@
 <?php
 
-namespace Shellpea\MultiSelect\Setup; 
+namespace Shellpea\MultiSelect\Setup;
 
 use Magento\Eav\Setup\EavSetupFactory;
 use Magento\Framework\Setup\ModuleDataSetupInterface;
@@ -19,7 +19,7 @@ class InstallData implements InstallDataInterface
     }
 
     public function install(ModuleDataSetupInterface $setup, ModuleContextInterface $context)
-    {echo 123;die;
+    {
         $eavSetup = $this->eavSetupFactory->create(['setup' => $setup]);
         $eavSetup->addAttribute(
             Product::ENTITY,
@@ -43,4 +43,3 @@ class InstallData implements InstallDataInterface
         );
     }
 }
-

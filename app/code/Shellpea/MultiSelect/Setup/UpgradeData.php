@@ -24,28 +24,20 @@ class UpgradeData implements UpgradeDataInterface
 
         $eavSetup = $this->eavSetupFactory->create(['setup' => $setup]);
 
-        $eavSetup->addAttribute(
+        $eavSetup->updateAttribute(
             Product::ENTITY,
             'attribute_multiselect',
-            [
-                'type' => 'text',
-                'label' => 'Multiselect Attribute',
-                'input' => 'multiselect',
-                'global' => Attribute::SCOPE_GLOBAL,
-                'backend' => 'Magento\Eav\Model\Entity\Attribute\Backend\ArrayBackend',
-                'visible' => true,
-                'required' => false,
-                'visible_on_front' => true,
-                'option' => ['values' => [
-                    'No',
-                    'of course not',
-                    'and in any case',
-                    ],
-                ],
-            ]
+            'is_html_allowed_on_front',
+            true
         );
+
+        $eavSetup->updateAttribute(
+            Product::ENTITY,
+            'attribute_multiselect',
+            'frontend_model',
+            'Shellpea\MultiSelect\Model\Attribute\Frontend\Material'
+        );
+
         $setup->endSetup();
     }
 }
-
-
