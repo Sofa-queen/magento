@@ -248,6 +248,7 @@ return [
         'Shellpea_Hello' => 0,
         'Shellpea_HelloCart' => 0,
         'Shellpea_LoggerURL' => 0,
+        'Shellpea_MultiSelect' => 1,
         'Shellpea_MyController' => 0,
         'Shellpea_MyTable' => 0,
         'Shellpea_NewAttribute' => 1,
