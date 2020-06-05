@@ -252,6 +252,7 @@ return [
         'Shellpea_MyController' => 0,
         'Shellpea_MyTable' => 0,
         'Shellpea_NewAttribute' => 1,
+        'Shellpea_Priority' => 1,
         'Shellpea_RouterClass' => 0,
         'Shellpea_SaveProduct' => 0,
         'Shellpea_Stores' => 0,
