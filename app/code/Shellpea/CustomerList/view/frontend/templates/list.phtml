@@ -1,0 +1,10 @@
+<div>
+    <h1><?php
+    foreach ($block->getCustomers() as $customer) {
+        $name = $customer->getFirstName();
+        $class = get_class($customer);
+        echo "class:$class -- customer:$name";
+        echo '<br />';
+    }
+    ?></h1>
+</div>
