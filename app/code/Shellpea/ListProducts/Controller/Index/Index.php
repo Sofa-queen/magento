@@ -1,7 +1,7 @@
 <?php
 namespace Shellpea\ListProducts\Controller\Index;
 
-class Display extends \Magento\Framework\App\Action\Action
+class Index extends \Magento\Framework\App\Action\Action
 {
     protected $_resultPageFactory;
 
@@ -15,11 +15,6 @@ class Display extends \Magento\Framework\App\Action\Action
 
     public function execute()
     {
-        $resultPage = $this->_resultPageFactory->create();
-        $html = $resultPage->getLayout()
-                ->createBlock('Shellpea\ListProducts\Block\Display')
-                ->setTemplate('Shellpea_ListProducts::list.phtml')
-                ->toHtml();
-        $this->getResponse()->setBody($html);
+        return $this->_resultPageFactory->create();
     }
 }
