@@ -29,7 +29,7 @@ class UpgradeData implements UpgradeDataInterface
             'global' => \Magento\Catalog\Model\ResourceModel\Eav\Attribute::SCOPE_GLOBAL,
             'frontend_type' => 'select',
             'backend_type' => 'int',
-            'is_system' => 0, 
+            'is_system' => 0,
             'visible' => true,
             'required' => false,
         ]);
@@ -50,4 +50,3 @@ class UpgradeData implements UpgradeDataInterface
         $setup->endSetup();
     }
 }
-

@@ -44,11 +44,9 @@ class Display extends Template
             ->setValue('%com')
             ->create();
         $filterGroup = $this->filterGroupBuilder
-              ->setFilters([$filterName, $filterId])
-              ->create();
+            ->setFilters([$filterName, $filterId])
+            ->create();
         $searchCriteria = $this->searchCriteriaBuilder
-            //->addFilter(['name', 'ghhgg', 'neq'],['entity_id',1, 'lteq'])
-            //->addFilter('entity_id',1, 'lteq')
             ->setFilterGroups([$filterGroup])
             ->create();
 

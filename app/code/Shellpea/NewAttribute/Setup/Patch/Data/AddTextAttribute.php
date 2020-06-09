@@ -34,10 +34,10 @@ class AddTextAttribute implements DataPatchInterface
         /** @var EavSetup $eavSetup */
         $eavSetup = $this->eavSetupFactory->create(['setup' => $this->moduleDataSetup]);
 
-        $eavSetup->addAttribute(\Magento\Catalog\Model\Product::ENTITY, 'custom_Attribute', [
+        $eavSetup->addAttribute(\Magento\Catalog\Model\Product::ENTITY, 'my_Attribute', [
             'group' => 'General',
             'type' => 'text',
-            'label' => 'Custom Attribute',
+            'label' => 'my Attribute',
             'input' => 'textarea',
             'global' => \Magento\Catalog\Model\ResourceModel\Eav\Attribute::SCOPE_GLOBAL,
             'used_in_product_listing' => true,
