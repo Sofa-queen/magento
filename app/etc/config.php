@@ -245,6 +245,7 @@ return [
         'Shellpea_Attributes' => 0,
         'Shellpea_Block' => 0,
         'Shellpea_CustomerList' => 1,
+        'Shellpea_GuestWishlist' => 1,
         'Shellpea_HTML' => 0,
         'Shellpea_Hello' => 0,
         'Shellpea_HelloCart' => 0,
