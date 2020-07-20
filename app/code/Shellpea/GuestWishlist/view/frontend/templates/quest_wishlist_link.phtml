@@ -1,0 +1,15 @@
+<div data-block="quest_wishlist_link" class="wishlist-wrapper">
+    <a class="action wishlist" href="http://magento.loc/wishlist">
+        <span class="text">My Wishlist</span>
+        <?php if($block->getQtyItems() != 0 && $block->getQtyItems() != null): ?>
+            <span class="qty"><?= $block->getQtyItems() ?></span>
+        <?php endif; ?>
+    </a>
+</div>
+<script type="text/x-magento-init">
+{
+    "*": {
+        "wishlist": {}
+    }
+}
+</script>
