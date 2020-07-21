@@ -12,6 +12,20 @@ namespace Shellpea\GuestWishlist\Controller;
  */
 class WishlistProvider extends \Magento\Wishlist\Controller\WishlistProvider
 {
+    public function __construct(
+        \Magento\Wishlist\Model\WishlistFactory $wishlistFactory,
+        \Magento\Customer\Model\Session $customerSession,
+        \Magento\Framework\Message\ManagerInterface $messageManager,
+        \Magento\Framework\App\RequestInterface $request
+    ) {
+        parent::__construct(
+            $wishlistFactory,
+            $customerSession,
+            $messageManager,
+            $request
+        );
+    }
+
     public function getWishlist($wishlistId = null)
     {
         if ($this->wishlist) {
@@ -26,10 +40,10 @@ class WishlistProvider extends \Magento\Wishlist\Controller\WishlistProvider
 
             if (!$wishlistId && !$customerId) {
                 if ($this->customerSession->getWishlistId() == null) {
-                    $wishlist->loadByCustomerId($customerId, true);
+                    $wishlist->loadWithoutCustomer(true);
                     $wishlist_id = $wishlist->getId();
                     $this->customerSession->setWishlistId($wishlist_id);
-                } else { 
+                } else {
                     $wishlist_id = $this->customerSession->getWishlistId();
                     $wishlist->load($wishlist_id);
                 }
@@ -57,4 +71,3 @@ class WishlistProvider extends \Magento\Wishlist\Controller\WishlistProvider
         return $wishlist;
     }
 }
-

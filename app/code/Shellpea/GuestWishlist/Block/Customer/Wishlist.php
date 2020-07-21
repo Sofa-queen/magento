@@ -28,4 +28,3 @@ class Wishlist extends \Magento\Wishlist\Block\Customer\Wishlist
         return $this->fetchView($this->getTemplateFile());
     }
 }
-
