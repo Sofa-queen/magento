@@ -9,6 +9,7 @@
     <preference for="Magento\Wishlist\Controller\WishlistProvider" type="Shellpea\GuestWishlist\Controller\WishlistProvider" />
     <preference for="Magento\Wishlist\Model\Wishlist" type="Shellpea\GuestWishlist\Model\Wishlist" />
     <preference for="Magento\Wishlist\Block\Customer\Wishlist" type="Shellpea\GuestWishlist\Block\Customer\Wishlist" />
+    <preference for="Magento\Wishlist\Helper\Data" type="Shellpea\GuestWishlist\Helper\Data" />
     <type name="Magento\Wishlist\Controller\AbstractIndex">
         <plugin name="authentication"  disabled="true"/>
     </type>
