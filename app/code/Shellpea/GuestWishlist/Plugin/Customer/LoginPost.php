@@ -33,20 +33,21 @@ class LoginPost
     public function afterExecute(\Magento\Customer\Controller\Account\LoginPost $subject)
     {
 
-       $wishlist_id = $this->session->getWishlistId();
-       $customer_id = $this->session->getCustomerId();
-       $guest_wishlist = $this->wishlist->load($wishlist_id);
-       $wishlist_collection = $guest_wishlist->getItemCollection();
-       foreach ($wishlist_collection as $item) {
+        $wishlist_id = $this->session->getWishlistId();
+        $customer_id = $this->session->getCustomerId();
+        $guest_wishlist = $this->wishlist->load($wishlist_id);
+        $wishlist_collection = $guest_wishlist->getItemCollection();
+        foreach ($wishlist_collection as $item) {
                 $productId = $item->getProduct()->getId();
                 $product = $this->_productRepository->getById($productId);
                 $wishlist = $this->_wishlistRepository->create()->loadByCustomerId($customer_id, true);
                 $wishlist->addNewItem($product);
                 $wishlist->save();
-       }
+        }
+        $guest_wishlist->delete();
 
-       $resultRedirect = $this->resultFactory->create(\Magento\Framework\Controller\ResultFactory::TYPE_REDIRECT);
-       $resultRedirect->setUrl($this->_redirect->getRefererUrl());
-       return $resultRedirect;
+        $resultRedirect = $this->resultFactory->create(\Magento\Framework\Controller\ResultFactory::TYPE_REDIRECT);
+        $resultRedirect->setUrl($this->_redirect->getRefererUrl());
+        return $resultRedirect;
     }
 }
