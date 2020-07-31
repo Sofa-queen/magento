@@ -16,6 +16,9 @@
     <type name="Magento\Customer\Controller\Account\CreatePost">
       <plugin name="add_to_wishlist_after_registration" type="Shellpea\GuestWishlist\Plugin\Customer\CreatePost" sortOrder="1" disabled="false" />
     </type>
+    <type name="Magento\Customer\Controller\Account\Confirm">
+      <plugin name="add_to_wishlist_after_registration_confirm" type="Shellpea\GuestWishlist\Plugin\Customer\Confirm" sortOrder="1" disabled="false" />
+    </type>
     <type name="Magento\Wishlist\Controller\AbstractIndex">
         <plugin name="authentication"  disabled="true"/>
     </type>

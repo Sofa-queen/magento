@@ -2,7 +2,7 @@
 
 namespace Shellpea\GuestWishlist\Plugin\Customer;
 
-class CreatePost
+class Confirm 
 {
     private $wishlist;
 
@@ -30,26 +30,22 @@ class CreatePost
         $this->_redirect = $redirect;
     }
 
-    public function afterExecute(\Magento\Customer\Controller\Account\CreatePost $subject, $resultRedirect)
+    public function afterExecute(\Magento\Customer\Controller\Account\Confirm $subject, $resultRedirect)
     {
         $wishlist_id = $this->session->getWishlistId();
         $customer_id = $this->session->getCustomerId();
-        if ($customer_id == null) { 
-            return $resultRedirect;
-        }
         $guest_wishlist = $this->wishlist->load($wishlist_id);
         $wishlist_collection = $guest_wishlist->getItemCollection();
         foreach ($wishlist_collection as $item) {
-                $productId = $item->getProduct()->getId();
-                $product = $this->_productRepository->getById($productId);
-                $wishlist = $this->_wishlistRepository->create()->loadByCustomerId($customer_id, true);
-                $wishlist->addNewItem($product);
-                $wishlist->save();
+                 $productId = $item->getProduct()->getId();
+                 $product = $this->_productRepository->getById($productId);
+                 $wishlist = $this->_wishlistRepository->create()->loadByCustomerId($customer_id, true);
+                 $wishlist->addNewItem($product);
+                 $wishlist->save();
         }
         $guest_wishlist->delete();
-        
-        $resultRedirect = $this->resultFactory->create(\Magento\Framework\Controller\ResultFactory::TYPE_REDIRECT);
-        $resultRedirect->setUrl($this->_redirect->getRefererUrl());
+
         return $resultRedirect;
     }
 }
+
