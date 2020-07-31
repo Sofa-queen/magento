@@ -2,7 +2,7 @@
 
 namespace Shellpea\GuestWishlist\Plugin\Customer;
 
-class Confirm 
+class Confirm
 {
     private $wishlist;
 
@@ -48,4 +48,3 @@ class Confirm
         return $resultRedirect;
     }
 }
-

@@ -34,7 +34,7 @@ class CreatePost
     {
         $wishlist_id = $this->session->getWishlistId();
         $customer_id = $this->session->getCustomerId();
-        if ($customer_id == null) { 
+        if ($customer_id == null) {
             return $resultRedirect;
         }
         $guest_wishlist = $this->wishlist->load($wishlist_id);

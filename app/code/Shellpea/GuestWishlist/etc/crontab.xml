@@ -1,7 +1,7 @@
 <config>
     <group id="default">
         <job name="delete_guest_wishlist" instance="Shellpea\GuestWishlist\Cron\DeleteGuestWishlist" method="execute">
-            <schedule>0 0 * * * *</schedule>
+            <schedule>0 0 * * *</schedule>
         </job>
     </group>
 </config>
