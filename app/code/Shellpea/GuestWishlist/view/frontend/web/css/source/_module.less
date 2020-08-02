@@ -1,0 +1,67 @@
+& when (@media-common = true) {
+    .wishlist-wrapper {
+        .action.wishlist {
+            text-decoration: none;
+            margin-left: 13px;
+            display: inline-block;
+            position: relative;
+            float: right;
+
+            &:before {
+                font-size: 22px;
+                line-height: 28px;
+                color: #757575;
+                content: '\e600';
+                font-family: 'luma-icons';
+                margin: 0;
+                vertical-align: top;
+                display: inline-block;
+                font-weight: normal;
+                overflow: hidden;
+                speak: none;
+                text-align: center;
+                width: 28px;
+            }
+
+            .text {
+                border: 0;
+                clip: rect(0, 0, 0, 0);
+                height: 1px;
+                margin: -1px;
+                overflow: hidden;
+                padding: 0;
+                position: absolute;
+                width: 1px;
+            }
+
+            .qty {
+                background: #ff5501;
+                color: #ffffff;
+                height: 24px;
+                line-height: 24px;
+                border-radius: 2px;
+                display: inline-block;
+                margin: 3px 0 0;
+                min-width: 18px;
+                overflow: hidden;
+                padding: 0 3px;
+                text-align: center;
+                white-space: normal;
+            }
+
+            &:hover:before {
+                color: #333333;
+            }
+        }
+    }
+}
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+    .wishlist-wrapper {
+        margin-top: 10px;
+        margin-right: 13px;
+        display: inline-block;
+        position: relative;
+        float: right;
+    }
+}
