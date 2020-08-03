@@ -14,14 +14,23 @@ class QtyItems extends \Magento\Framework\View\Element\Template
      */
     protected $wishlist;
 
+    protected $_urlInterface;
+
     public function __construct(
         \Magento\Framework\View\Element\Template\Context $context,
         \Magento\Customer\Model\Session $customerSession,
+        \Magento\Framework\UrlInterface $urlInterface,
         \Magento\Wishlist\Model\Wishlist $wishlist
     ) {
         parent::__construct($context);
         $this->customerSession = $customerSession;
+        $this->_urlInterface = $urlInterface;
         $this->wishlist = $wishlist;
+    }
+
+    public function getHref()
+    {
+        return $this->_urlInterface->getUrl('wishlist');
     }
 
     public function getQtyItems()

@@ -11,6 +11,7 @@
         "sort-packages": true
     },
     "require": {
+        "magento-ecg/coding-standard": "2.*",
         "magento/product-community-edition": "2.3.4"
     },
     "require-dev": {
