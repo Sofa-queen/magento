@@ -10,7 +10,7 @@ class Confirm
 
     public function __construct(
         \Magento\Customer\Model\Session $customerSession,
-        \Shellpea\GuestWishlist\Model\Wishlist $wishlist
+        \Magento\Wishlist\Model\Wishlist $wishlist
     ) {
         $this->session = $customerSession;
         $this->wishlist = $wishlist;

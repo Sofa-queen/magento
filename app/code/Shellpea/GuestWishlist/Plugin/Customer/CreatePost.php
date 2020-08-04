@@ -16,7 +16,7 @@ class CreatePost
         \Magento\Framework\App\Response\RedirectInterface $redirect,
         \Magento\Framework\Controller\ResultFactory $resultFactory,
         \Magento\Customer\Model\Session $customerSession,
-        \Shellpea\GuestWishlist\Model\Wishlist $wishlist
+        \Magento\Wishlist\Model\Wishlist $wishlist
     ) {
         $this->resultFactory = $resultFactory;
         $this->session = $customerSession;
