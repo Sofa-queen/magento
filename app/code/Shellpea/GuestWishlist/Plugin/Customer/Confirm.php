@@ -2,24 +2,20 @@
 
 namespace Shellpea\GuestWishlist\Plugin\Customer;
 
-class Confirm
+class Confirm extends \Shellpea\GuestWishlist\Helper\GuestWishlist
 {
     protected $customerSession;
 
-    protected $_wishlist;
-
     public function __construct(
-        \Magento\Customer\Model\Session $customerSession,
-        \Magento\Wishlist\Model\Wishlist $wishlist
+        \Magento\Customer\Model\Session $customerSession
     ) {
         $this->session = $customerSession;
-        $this->wishlist = $wishlist;
     }
 
     public function afterExecute(\Magento\Customer\Controller\Account\Confirm $subject, $resultRedirect)
     {
         $customerId = $this->session->getCustomerId();
-        $this->wishlist->addingProductsToTheCustomerWishlist($customerId);
+        $this->addingProductsToTheCustomerWishlist($customerId);
 
         return $resultRedirect;
     }
