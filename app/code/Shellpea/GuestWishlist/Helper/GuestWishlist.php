@@ -2,7 +2,7 @@
 
 namespace Shellpea\GuestWishlist\Helper;
 
-class GuestWishlist 
+class GuestWishlist
 {
     protected $_wishlistRepository;
 
@@ -31,23 +31,15 @@ class GuestWishlist
     public function addingProductsToTheCustomerWishlist($customerId)
     {
         $wishlistId = $this->session->getWishlistId();
-        echo $wishlistId . '</br>';
-        var_dump($wishlistId);
         $wishlist = $this->wishlistFactory->create()->load($wishlistId);
        
-        //$wishlist->load($wishlistId);
-        echo $wishlist->getId() . '</br>';
-        die;
-       // $guestWishlist = $this->wishlist->load($wishlistId);
-        echo $guestWishlist->getId();
+        $wishlist->load($wishlistId);
+        $guestWishlist = $this->wishlist->load($wishlistId);
         $wishlistCollection = $guestWishlist->getItemCollection();
         foreach ($wishlistCollection as $item) {
-                 echo 333;
                  $productId = $item->getProduct()->getId();
                  $product = $this->_productRepository->getById($productId);
-                 echo $productId . '</br>';
                  $wishlist = $this->_wishlistRepository->create()->loadByCustomerId($customerId, true);
-                 echo $wishlist->getId() . '<pre>';
                  $wishlist->addNewItem($product);
                  $wishlist->save();
         }
@@ -55,4 +47,3 @@ class GuestWishlist
         return '';
     }
 }
-

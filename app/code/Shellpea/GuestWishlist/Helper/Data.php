@@ -9,8 +9,8 @@ class Data extends \Magento\Wishlist\Helper\Data
         if ($customerId == null) {
             $wishlistId = $this->_customerSession->getWishlistId();
             $wishlist = $this->wishlistProvider->getWishlist();
-            $wishlist_collection = $wishlist->getItemCollection();
-            return count($wishlist_collection);
+            $wishlistCollection = $wishlist->getItemCollection();
+            return count($wishlistCollection);
         }
         $storedDisplayType = $this->_customerSession->getWishlistDisplayType();
         $currentDisplayType = $this->scopeConfig->getValue(
