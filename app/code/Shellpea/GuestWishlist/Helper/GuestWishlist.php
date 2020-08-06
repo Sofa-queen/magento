@@ -31,9 +31,8 @@ class GuestWishlist
     public function addingProductsToTheCustomerWishlist($customerId)
     {
         $wishlistId = $this->session->getWishlistId();
-        $wishlist = $this->wishlistFactory->create()->load($wishlistId);
-       
-        $wishlist->load($wishlistId);
+        //$wishlist = $this->wishlistFactory->create()->load($wishlistId);
+        //$wishlist->load($wishlistId);
         $guestWishlist = $this->wishlist->load($wishlistId);
         $wishlistCollection = $guestWishlist->getItemCollection();
         foreach ($wishlistCollection as $item) {
