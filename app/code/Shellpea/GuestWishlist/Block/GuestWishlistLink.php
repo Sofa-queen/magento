@@ -36,12 +36,14 @@ class GuestWishlistLink extends \Magento\Framework\View\Element\Template
     {
         $customerId = $this->customerSession->getCustomerId();
         $wishlistId = $this->customerSession->getWishlistId();
-        if ($customerId != 0) {
-            $wishlist = $this->wishlist->loadByCustomerId($customerId, true);
-        } elseif ($wishlistId !== null) {
-            $wishlist = $this->wishlist->load($wishlistId);
+        if($wishlistId) {
+           if ($customerId != 0) {
+               $wishlist = $this->wishlist->loadByCustomerId($customerId, true);
+           } else {
+               $wishlist = $this->wishlist->load($wishlistId);
+           }
+           return $this->getQtyProductsInWishlist($wishlist);
         }
-        return $this->getQtyProductsInWishlist($wishlist);
     }
     public function getQtyProductsInWishlist($wishlist)
     {
