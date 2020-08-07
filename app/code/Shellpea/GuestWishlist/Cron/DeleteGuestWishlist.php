@@ -2,8 +2,8 @@
 namespace Shellpea\GuestWishlist\Cron;
 
 use Magento\Framework\App\Config\ScopeConfigInterface;
-use Magento\Framework\App\ResourceConnection;
 use Magento\Framework\Stdlib\DateTime\DateTime;
+use Magento\Framework\App\ResourceConnection;
 
 class DeleteGuestWishlist
 {

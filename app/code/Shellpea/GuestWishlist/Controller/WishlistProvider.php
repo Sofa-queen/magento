@@ -1,21 +1,12 @@
 <?php
-/**
- * Copyright © Magento, Inc. All rights reserved.
- * See COPYING.txt for license details.
- */
 namespace Shellpea\GuestWishlist\Controller;
 
-/**
- * WishlistProvider Controller
- *
- * @SuppressWarnings(PHPMD.CookieAndSessionMisuse)
- */
 class WishlistProvider extends \Magento\Wishlist\Controller\WishlistProvider
 {
     public function __construct(
+        \Magento\Framework\Message\ManagerInterface $messageManager,
         \Magento\Wishlist\Model\WishlistFactory $wishlistFactory,
         \Magento\Customer\Model\Session $customerSession,
-        \Magento\Framework\Message\ManagerInterface $messageManager,
         \Magento\Framework\App\RequestInterface $request
     ) {
         parent::__construct(
@@ -41,11 +32,11 @@ class WishlistProvider extends \Magento\Wishlist\Controller\WishlistProvider
             if (!$wishlistId && !$customerId) {
                 if ($this->customerSession->getWishlistId() == null) {
                     $wishlist->loadWithoutCustomer(true);
-                    $wishlist_id = $wishlist->getId();
-                    $this->customerSession->setWishlistId($wishlist_id);
+                    $WishlistId = $wishlist->getId();
+                    $this->customerSession->setWishlistId($WishlistId);
                 } else {
-                    $wishlist_id = $this->customerSession->getWishlistId();
-                    $wishlist->load($wishlist_id);
+                    $WishlistId = $this->customerSession->getWishlistId();
+                    $wishlist->load($WishlistId);
                 }
             }
 
