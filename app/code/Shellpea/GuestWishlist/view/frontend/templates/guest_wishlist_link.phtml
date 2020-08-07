@@ -1,8 +1,8 @@
 <div data-block="quest_wishlist_link" class="wishlist-wrapper">
-    <a class="action wishlist" href="<?= $block->getHref(); ?>">
-        <span class="text"><?= __('My Wishlist'); ?></span>
+    <a class="action wishlist" href="<?= $block->escapeUrl($block->getHref()); ?>">
+        <span class="text"><?= $block->escapeHtml($block->getLabel()) ?></span>
         <?php if ($block->getWishlistQty()): ?>
-             <span class="qty"><?= $block->getWishlistQty(); ?></span>
+             <span class="qty"><?= $block->escapeQuote($block->getWishlistQty()); ?></span>
         <?php endif; ?>
     </a>
 </div>

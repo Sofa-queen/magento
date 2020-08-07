@@ -22,6 +22,11 @@ class GuestWishlistLink extends \Magento\Framework\View\Element\Template
         $this->wishlist = $wishlist;
     }
 
+    public function getLabel()
+    {
+        return __('My Guest Wish List');
+    }
+
     public function getHref()
     {
         return $this->_urlInterface->getUrl('wishlist');
