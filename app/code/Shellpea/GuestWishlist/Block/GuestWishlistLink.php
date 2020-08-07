@@ -24,7 +24,7 @@ class GuestWishlistLink extends \Magento\Framework\View\Element\Template
 
     public function getLabel()
     {
-        return __('My Guest Wish List');
+        return __('My Wish List');
     }
 
     public function getHref()
@@ -38,19 +38,13 @@ class GuestWishlistLink extends \Magento\Framework\View\Element\Template
         $wishlistId = $this->customerSession->getWishlistId();
         if ($customerId != 0) {
             $wishlist = $this->wishlist->loadByCustomerId($customerId, true);
-            return  $this->getQtyProductsInWishlist($wishlist);
         } elseif ($wishlistId !== null) {
             $wishlist = $this->wishlist->load($wishlistId);
-            return $this->getQtyProductsInWishlist($wishlist);
         }
+        return $this->getQtyProductsInWishlist($wishlist);
     }
     public function getQtyProductsInWishlist($wishlist)
     {
-        $wishlistCollection = $wishlist->getItemCollection();
-        $qtyProductsInWishlist = [];
-        foreach ($wishlistCollection as $item) {
-                 $qtyProductsInWishlist[] = $item->getId();
-        }
-        return count($qtyProductsInWishlist);
+        return $wishlist->getItemCollection()->count();
     }
 }

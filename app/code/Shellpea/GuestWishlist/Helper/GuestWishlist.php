@@ -17,6 +17,5 @@ class GuestWishlist
                  $wishlist->save();
         }
         $guestWishlist->delete();
-        return '';
     }
 }
