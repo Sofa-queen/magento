@@ -4,29 +4,29 @@ namespace Shellpea\GuestWishlist\Plugin\Customer;
 
 class CreatePost extends \Shellpea\GuestWishlist\Helper\GuestWishlist
 {
-    protected $_productRepository;                                                                                                     
+    protected $_productRepository;
                                                                                                                                        
-    protected $customerSession;                                                                                                        
+    protected $customerSession;
                                                                                                                                        
-    protected $wishlistFactory;                                                                                                        
+    protected $wishlistFactory;
                                                                                                                                        
-    protected $resultFactory;                                                                                                          
+    protected $resultFactory;
                                                                                                                                        
-    protected $redirect;                                                                                                               
+    protected $redirect;
                                                                                                                                        
-    public function __construct(                                                                                                       
-        \Magento\Catalog\Api\ProductRepositoryInterface $productRepository,                                                            
-        \Magento\Framework\App\Response\RedirectInterface $redirect,                                                                   
-        \Magento\Framework\Controller\ResultFactory $resultFactory,                                                                    
-        \Magento\Wishlist\Model\WishlistFactory $wishlistFactory,                                                                      
-        \Magento\Customer\Model\Session $customerSession                                                                               
-    ) {                                                                                                                                
-        $this->_productRepository = $productRepository;                                                                                
-        $this->wishlistFactory = $wishlistFactory;                                                                                     
-        $this->resultFactory = $resultFactory;                                                                                         
-        $this->session = $customerSession;                                                                                             
-        $this->_redirect = $redirect;                                                                                                  
-    }                                                                                                                                  
+    public function __construct(
+        \Magento\Catalog\Api\ProductRepositoryInterface $productRepository,
+        \Magento\Framework\App\Response\RedirectInterface $redirect,
+        \Magento\Framework\Controller\ResultFactory $resultFactory,
+        \Magento\Wishlist\Model\WishlistFactory $wishlistFactory,
+        \Magento\Customer\Model\Session $customerSession
+    ) {
+        $this->_productRepository = $productRepository;
+        $this->wishlistFactory = $wishlistFactory;
+        $this->resultFactory = $resultFactory;
+        $this->session = $customerSession;
+        $this->_redirect = $redirect;
+    }
      
     public function afterExecute(\Magento\Customer\Controller\Account\CreatePost $subject, $resultRedirect)
     {
