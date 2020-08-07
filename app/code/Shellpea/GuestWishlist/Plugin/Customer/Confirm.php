@@ -5,11 +5,11 @@ namespace Shellpea\GuestWishlist\Plugin\Customer;
 class Confirm extends \Shellpea\GuestWishlist\Helper\GuestWishlist
 {
     protected $_productRepository;
-                                                                                                                                       
+ 
     protected $customerSession;
-                                                                                                                                       
+
     protected $wishlistFactory;
-                                                                                                                                       
+
     public function __construct(
         \Magento\Catalog\Api\ProductRepositoryInterface $productRepository,
         \Magento\Wishlist\Model\WishlistFactory $wishlistFactory,

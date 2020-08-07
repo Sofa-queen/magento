@@ -5,15 +5,15 @@ namespace Shellpea\GuestWishlist\Plugin\Customer;
 class CreatePost extends \Shellpea\GuestWishlist\Helper\GuestWishlist
 {
     protected $_productRepository;
-                                                                                                                                       
+
     protected $customerSession;
-                                                                                                                                       
+
     protected $wishlistFactory;
-                                                                                                                                       
+
     protected $resultFactory;
-                                                                                                                                       
+
     protected $redirect;
-                                                                                                                                       
+
     public function __construct(
         \Magento\Catalog\Api\ProductRepositoryInterface $productRepository,
         \Magento\Framework\App\Response\RedirectInterface $redirect,
