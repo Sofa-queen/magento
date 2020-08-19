@@ -1,26 +1,19 @@
 <?xml version="1.0"?>
-<!--
-/**
- * Copyright © Magento, Inc. All rights reserved.
- * See COPYING.txt for license details.
- */
--->
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
     <preference for="Magento\Wishlist\Controller\WishlistProvider" type="Shellpea\GuestWishlist\Controller\WishlistProvider" />
     <preference for="Magento\Wishlist\Model\Wishlist" type="Shellpea\GuestWishlist\Model\Wishlist" />
     <preference for="Magento\Wishlist\Block\Customer\Wishlist" type="Shellpea\GuestWishlist\Block\Customer\Wishlist" />
     <preference for="Magento\Wishlist\Helper\Data" type="Shellpea\GuestWishlist\Helper\Data" />
     <type name="Magento\Customer\Controller\Account\LoginPost">
-      <plugin name="add_to_wishlist_after_sing_in" type="Shellpea\GuestWishlist\Plugin\Customer\LoginPost" sortOrder="1" disabled="false" />
+        <plugin name="add_to_wishlist_after_sing_in" type="Shellpea\GuestWishlist\Plugin\Customer\LoginPost" sortOrder="1" disabled="false" />
     </type>
     <type name="Magento\Customer\Controller\Account\CreatePost">
-      <plugin name="add_to_wishlist_after_registration" type="Shellpea\GuestWishlist\Plugin\Customer\CreatePost" sortOrder="1" disabled="false" />
+        <plugin name="add_to_wishlist_after_registration" type="Shellpea\GuestWishlist\Plugin\Customer\CreatePost" sortOrder="1" disabled="false" />
     </type>
     <type name="Magento\Customer\Controller\Account\Confirm">
-      <plugin name="add_to_wishlist_after_registration_confirm" type="Shellpea\GuestWishlist\Plugin\Customer\Confirm" sortOrder="1" disabled="false" />
+        <plugin name="add_to_wishlist_after_registration_confirm" type="Shellpea\GuestWishlist\Plugin\Customer\Confirm" sortOrder="1" disabled="false" />
     </type>
     <type name="Magento\Wishlist\Controller\AbstractIndex">
         <plugin name="authentication"  disabled="true"/>
     </type>
 </config>
-
